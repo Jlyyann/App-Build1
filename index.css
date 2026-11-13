@@ -1,0 +1,242 @@
+:root {
+	--caramel: #af9164;
+	--cream: #f7f3e3;
+	--silver: #b3b6b7;
+	--burgundy: #6f1a07;
+	--espresso: #2b2118;
+}
+
+body {
+	background-color: var(--cream);
+	color: var(--espresso);
+	font-family: "Montserrat", sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.navbar {
+	background-color: var(--cream);
+	border-bottom: 1px solid var(--silver);
+	padding-block: 1rem;
+}
+
+.navbar .container {
+	position: relative;
+}
+
+.navbar-brand {
+	color: var(--burgundy) !important;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+}
+
+.navbar .nav-link {
+	color: var(--espresso) !important;
+	font-weight: 500;
+	transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link.active {
+	color: var(--burgundy) !important;
+}
+
+.navbar .register-link {
+	background-color: var(--burgundy);
+	border-radius: 0.25rem;
+	color: var(--cream) !important;
+	padding-inline: 1rem !important;
+}
+
+.navbar .register-link:hover,
+.navbar .register-link:focus {
+	background-color: var(--caramel);
+	color: var(--espresso) !important;
+}
+
+.navbar-toggler {
+	border-color: var(--caramel);
+}
+
+.navbar-toggler:focus {
+	box-shadow: 0 0 0 0.2rem rgba(175, 145, 100, 0.35);
+}
+
+#hero {
+	background-image:
+		linear-gradient(90deg, rgba(43, 33, 24, 0.88) 0%, rgba(43, 33, 24, 0.62) 45%, rgba(43, 33, 24, 0.12) 100%),
+		url("coffee.avif");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: var(--cream);
+	min-height: calc(100svh - 73px);
+	overflow: hidden;
+}
+
+.hero-content {
+	max-width: 680px;
+	padding-block: 5rem;
+	animation: hero-enter 0.75s ease-out both;
+}
+
+.hero-label,
+.eyebrow {
+	color: var(--caramel);
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.hero-content .lead {
+	max-width: 580px;
+}
+
+.hero-button {
+	background-color: var(--burgundy);
+	color: var(--cream);
+	font-weight: 600;
+	padding: 0.85rem 1.4rem;
+	transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-button:hover,
+.hero-button:focus {
+	background-color: var(--caramel);
+	color: var(--espresso);
+	transform: translateY(-2px);
+}
+
+.section-space {
+	padding-block: 6rem;
+}
+
+.section-heading {
+	max-width: 650px;
+}
+
+.section-heading p:last-child {
+	color: rgba(43, 33, 24, 0.75);
+}
+
+.drink-card {
+	background-color: transparent;
+	border: 1px solid var(--silver);
+	border-radius: 0;
+	color: var(--espresso);
+	transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.drink-card:hover {
+	background-color: rgba(175, 145, 100, 0.12);
+	transform: translateY(-6px);
+}
+
+.drink-number {
+	color: var(--burgundy);
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+}
+
+.drink-price {
+	color: var(--burgundy);
+	font-weight: 700;
+}
+
+.about-section {
+	background-color: var(--espresso);
+	color: var(--cream);
+}
+
+.about-copy {
+	color: rgba(247, 243, 227, 0.78);
+	font-size: 1.1rem;
+	line-height: 1.9;
+}
+
+.site-footer {
+	background-color: var(--burgundy);
+	color: var(--cream);
+}
+
+.footer-brand {
+	color: var(--cream);
+	font-size: 1.35rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-decoration: none;
+}
+
+.footer-brand:hover,
+.footer-brand:focus {
+	color: var(--caramel);
+}
+
+@keyframes hero-enter {
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (min-width: 992px) {
+	.navbar-nav {
+		left: 50%;
+		position: absolute;
+		transform: translateX(-50%);
+	}
+}
+
+@media (max-width: 991.98px) {
+	.navbar-nav {
+		padding-block: 1rem;
+	}
+
+	.nav-log {
+		margin-left: 0 !important;
+		padding-bottom: 0.5rem;
+	}
+}
+
+@media (max-width: 767.98px) {
+	#hero {
+		background-image:
+			linear-gradient(rgba(43, 33, 24, 0.72), rgba(43, 33, 24, 0.72)),
+			url("coffee.avif");
+		background-position: center;
+		min-height: 78svh;
+	}
+
+	.hero-content {
+		padding-block: 4rem;
+	}
+
+	.section-space {
+		padding-block: 4rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	.hero-content {
+		animation: none;
+	}
+
+	.drink-card,
+	.hero-button {
+		transition: none;
+	}
+}
